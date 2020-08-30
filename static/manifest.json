@@ -1,0 +1,20 @@
+{
+  "background_color": "#ffffff",
+  "theme_color": "#333333",
+  "name": "Kick Stash",
+  "short_name": "kick",
+  "display": "minimal-ui",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "",
+      "type": ""
+    },
+    {
+      "src": "",
+      "sizes": "",
+      "type": ""
+    }
+  ]
+}
