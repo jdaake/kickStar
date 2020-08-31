@@ -4,7 +4,7 @@
 
   onMount(() => {
     if (!isAuthorized) {
-      location.href = "login";
+      return this.redirect(302, "login");
     }
     return;
   });
