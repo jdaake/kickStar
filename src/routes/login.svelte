@@ -1,5 +1,4 @@
 <script>
-  import { fade } from "svelte/transition";
   import authStore from "../stores/auth-store.js";
   let isAuthenticated;
   let error;
@@ -24,35 +23,34 @@
 </script>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
-
+  @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
   section {
     margin-top: 12rem;
-    font-family: "Orbitron", sans-serif;
+    font-family: "Ubuntu", sans-serif;
   }
+
   input {
     display: block;
     width: 90%;
+    height: 3rem;
     font: inherit;
     border: none;
     border-bottom: 2px solid #ccc;
-    border-radius: 3px 3px 0 0;
     background: white;
-    padding: 0.15rem 0.25rem;
     transition: border-color 0.1s ease-out;
-    margin-bottom: 0.8rem;
+    margin: 0, 0, 0.8rem, 0;
+    padding-left: 0.5rem;
   }
 
   input:focus {
     border-color: #ff2247;
     outline: none;
   }
-  label {
+  /* label {
     display: block;
     margin-bottom: 0.5rem;
     width: 100%;
-    font-family: "Orbitron", sans-serif;
-  }
+  } */
   button {
     background-color: #ff2247;
     border-radius: 10px;
@@ -71,6 +69,9 @@
     border: 1px solid #ceff00;
   }
 
+  #password {
+    margin-bottom: 1rem;
+  }
   .login-card-container {
     display: flex;
     margin: auto;
@@ -84,10 +85,6 @@
   }
   .login-card {
     width: 90%;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-
     margin: auto;
   }
 
@@ -100,7 +97,9 @@
   }
 
   .button-container {
-    align-items: center;
+    display: flex;
+    margin: auto;
+    justify-content: center;
   }
 </style>
 
@@ -108,28 +107,28 @@
   <title>Kick Stash | Login</title>
 </svelte:head>
 
-<section fade={{ duration: 400, delay: 100 }}>
+<section>
   <div class="login-card-container">
     <div class="login-card">
       <div class="login-header">
-        <h2>Login</h2>
-        <h4>Please enter your username and password</h4>
+
+        <h2>Please enter your creds.</h2>
       </div>
       <div class="login-username">
-        <label for="username">Username:</label>
+        <!-- <label for="username">Username:</label> -->
         <input
           id="username"
           type="text"
-          placeholder="Username"
-          bind:value={username} />
+          bind:value={username}
+          placeholder="Username" />
       </div>
       <div class="login-password">
-        <label for="password">Password:</label>
+        <!-- <label for="password">Password:</label> -->
         <input
           id="password"
           type="password"
-          placeholder="Password"
-          bind:value={password} />
+          bind:value={password}
+          placeholder="Password" />
       </div>
       <div class="button-container">
         <button type="submit" on:click={authenticateUser(username, password)}>
